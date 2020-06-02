@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
+   <top>
+      <VBox>
+         <children>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Unilink">
+                  <items>
+                    <MenuItem fx:id="devInfo" mnemonicParsing="false" onAction="#devInfoDialogShow" text="Developer Info" />
+                        <MenuItem fx:id="quit" mnemonicParsing="false" onAction="#quitApplication" text="Quit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Data">
+                  <items>
+                    <MenuItem fx:id="export" mnemonicParsing="false" onAction="#exportData" text="Export" />
+                        <MenuItem fx:id="importData" mnemonicParsing="false" onAction="#importData" text="Import" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #0d0449;">
+              <items>
+                  <HBox spacing="25.0">
+                     <children>
+                      <Button fx:id="newEventPostButton" mnemonicParsing="false" onAction="#showAddPostWindow" style="-fx-background-color: #04d11c; -fx-text-fill: #fff;" text="Add New Post" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="25.0">
+                     <children>
+                        <Label text="Filter Posts by" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox spacing="5.0">
+                           <children>
+                              <ComboBox fx:id="comboBoxType" onAction="#typeBoxUpdated" prefWidth="150.0" promptText="Type" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="5.0">
+                           <children>
+                              <ComboBox fx:id="comboBoxStatus" onAction="#statusBoxUpdated" prefWidth="150.0" promptText="Status" />
+                           </children>
+                        </HBox>
+                        <HBox spacing="5.0" />
+                     </children>
+                     <padding>
+                        <Insets left="400.0" />
+                     </padding>
+                  </HBox>
+                  <ComboBox fx:id="comboBoxCreator" onAction="#creatorBoxUpdated" prefWidth="150.0" promptText="Creator" />
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #9bc2f2;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="mainHeading" layoutX="74.0" layoutY="40.0" text="Heading">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <Label fx:id="userNameHeading" layoutX="496.0" layoutY="40.0" text="Welcome Hikansh">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <Button fx:id="logoutButton" layoutX="1065.0" layoutY="36.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #f52500; -fx-text-fill: #fff;" text="Logout">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <ScrollPane layoutX="11.0" layoutY="111.0" prefHeight="505.0" prefViewportHeight="200.0" prefViewportWidth="200.0" prefWidth="1161.0" style="-fx-background-color: #0d0449;">
+               <content>
+                  <ListView fx:id="postsListView" layoutX="492.0" layoutY="215.0" prefHeight="501.0" prefWidth="1158.0" />
+               </content>
+            </ScrollPane>
+            <Button fx:id="loadBtn" layoutX="936.0" layoutY="36.0" mnemonicParsing="false" onAction="#LoadData" style="-fx-background-color: #04d11c;" text="Load Data" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

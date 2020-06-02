@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="1183.0" style="-fx-background-color: #9bc2f2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddNewPost">
+   <children>
+      <Button fx:id="goBackButton" layoutX="45.0" layoutY="36.0" mnemonicParsing="false" onAction="#goBackToMainWindow" style="-fx-background-color: #f52500; -fx-text-fill: #fff; -fx-font-size: 1.3em;" text="&lt; Go Back" />
+      <Label layoutX="33.0" layoutY="126.0" text="Select Type of Post">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <ComboBox fx:id="comboBoxPosts" layoutX="33.0" layoutY="171.0" onAction="#comboBoxUpdated" prefWidth="150.0" promptText="Type of Post" />
+      <Label layoutX="431.0" layoutY="90.0" text="Title :" />
+      <TextField fx:id="title" layoutX="543.0" layoutY="85.0" promptText="Title" />
+      <Label layoutX="415.0" layoutY="192.0" text="Description :" />
+      <Label fx:id="venueLabel" layoutX="424.0" layoutY="288.0" text="Venue :" />
+      <Label fx:id="dateLabel" layoutX="430.0" layoutY="333.0" text="Date :" />
+      <TextField fx:id="capacity" layoutX="543.0" layoutY="382.0" promptText="Capacity" />
+      <TextField fx:id="venue" layoutX="555.0" layoutY="283.0" promptText="Venue" />
+      <Label fx:id="capacityLabel" layoutX="424.0" layoutY="387.0" text="Capacity :" />
+      <TextArea fx:id="description" layoutX="543.0" layoutY="139.0" prefHeight="116.0" prefWidth="211.0" promptText="Description" />
+      <Label fx:id="askPriceLabel" layoutX="412.0" layoutY="288.0" text="Asking Price :" />
+      <Label fx:id="minRaiseLabel" layoutX="401.0" layoutY="333.0" text="Minimum Raise :" />
+      <TextField fx:id="askingPrice" layoutX="555.0" layoutY="283.0" promptText="Asking Price" />
+      <TextField fx:id="minRaise" layoutX="543.0" layoutY="328.0" promptText="Min Raise" />
+      <TextField fx:id="proposedPrice" layoutX="543.0" layoutY="283.0" promptText="Proposed Price" />
+      <Label fx:id="propPriceLabel" layoutX="396.0" layoutY="288.0" text="Proposed Price :" />
+      <Label fx:id="errorLabel" layoutX="371.0" layoutY="604.0" text="Errors will be shown here" textFill="#fc0303">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Button fx:id="addPostButton" layoutX="582.0" layoutY="487.0" mnemonicParsing="false" onAction="#addPost" style="-fx-background-color: #04d11c; -fx-text-fill: #fff; -fx-font-size: 1.5em;" text="Add" />
+      <Button fx:id="cancelButton" layoutX="679.0" layoutY="487.0" mnemonicParsing="false" onAction="#goBackToMainWindow" style="-fx-background-color: #f52500; -fx-text-fill: #fff; -fx-font-size: 1.5em;" text="Cancel" />
+      <DatePicker fx:id="date" layoutX="540.0" layoutY="328.0" />
+      <Label fx:id="successLabel" layoutX="302.0" layoutY="569.0" text="New post created successfully ! You can add more if you like !" textFill="#1ebc05">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="uploadImageBtn" layoutX="376.0" layoutY="487.0" mnemonicParsing="false" onAction="#uploadImage" style="-fx-background-color: #f6ff00; -fx-text-fill: #000; -fx-font-size: 1.5em;" text="Upload Image" />
+      <Label fx:id="fileUploadLabel" layoutX="45.0" layoutY="446.0" text="Selected File to Upload : ">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

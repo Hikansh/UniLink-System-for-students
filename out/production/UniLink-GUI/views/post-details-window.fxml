@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="1183.0" style="-fx-background-color: #9bc2f2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PostDetailsWindowController">
+   <top>
+      <AnchorPane prefHeight="113.0" prefWidth="1183.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="goBack" layoutX="55.0" layoutY="53.0" mnemonicParsing="false" onAction="#goBack" style="-fx-background-color: #f52500;" text="&lt; Go Back" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="490.0" layoutY="55.0" text="Post Details">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="image" fitHeight="200.0" fitWidth="250.0" layoutX="46.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="id" layoutX="380.0" layoutY="47.0" promptText="Post ID" />
+            <TextField fx:id="status" layoutX="915.0" layoutY="47.0" promptText="Status" />
+            <TextField fx:id="venue" layoutX="663.0" layoutY="111.0" promptText="Venue" />
+            <TextField fx:id="capacity" layoutX="663.0" layoutY="179.0" promptText="Capacity" />
+            <TextField fx:id="date" layoutX="915.0" layoutY="111.0" promptText="Date" />
+            <TextField fx:id="title" layoutX="663.0" layoutY="47.0" promptText="Title" />
+            <TextField fx:id="attendee_count" layoutX="915.0" layoutY="179.0" promptText="Attendee Count" />
+            <TextField fx:id="minRaise" layoutX="663.0" layoutY="179.0" promptText="Minimum Raise" />
+            <TextField fx:id="askingPrice" layoutX="915.0" layoutY="111.0" promptText="Asking Price" />
+            <TextField fx:id="highestOffer" layoutX="663.0" layoutY="111.0" promptText="Highest Offer" />
+            <TextField fx:id="lowestOffer" layoutX="663.0" layoutY="111.0" promptText="Lowest Offer" />
+            <TextField fx:id="proposedPrice" layoutX="915.0" layoutY="111.0" promptText="Proposed Price" />
+            <TextArea fx:id="description" layoutX="375.0" layoutY="111.0" prefHeight="144.0" prefWidth="216.0" promptText="Description" />
+            <Button fx:id="upload" layoutX="110.0" layoutY="281.0" mnemonicParsing="false" onAction="#uploadImage" style="-fx-background-color: #f6ff00;" text="Upload Image">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="close" layoutX="429.0" layoutY="281.0" mnemonicParsing="false" onAction="#closePost" style="-fx-background-color: #ffa02c;" text="Close Post" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="delete" layoutX="699.0" layoutY="281.0" mnemonicParsing="false" onAction="#deletePost" style="-fx-background-color: #f52500;" text="Delete Post" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="save" layoutX="946.0" layoutY="281.0" mnemonicParsing="false" onAction="#savePost" style="-fx-background-color: #04d11c;" text="Save Post" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="idLabel" layoutX="380.0" layoutY="24.0" text="ID" />
+            <Label fx:id="descriptionLabel" layoutX="380.0" layoutY="90.0" text="Description" />
+            <Label fx:id="statusLabel" layoutX="982.0" layoutY="24.0" text="Status" />
+            <Label fx:id="titleLabel" layoutX="714.0" layoutY="24.0" text="Title" />
+            <Label fx:id="venueLabel" layoutX="721.0" layoutY="90.0" text="Venue" />
+            <Label fx:id="dateLabel" layoutX="981.0" layoutY="90.0" text="Date" />
+            <Label fx:id="capacityLabel" layoutX="706.0" layoutY="158.0" text="Capacity" />
+            <Label fx:id="askinglabel" layoutX="958.0" layoutY="90.0" text="Asking price" />
+            <Label fx:id="minLabel" layoutX="707.0" layoutY="158.0" text="Minimum Raise" />
+            <Label fx:id="lowestLabel" layoutX="707.0" layoutY="90.0" text="Lowest Offer" />
+            <Label fx:id="proposedLabel" layoutX="958.0" layoutY="90.0" text="Proposed Price" />
+            <Label fx:id="highestLabel" layoutX="699.0" layoutY="90.0" text="Highest Offer" />
+            <Label fx:id="attendeeLabel" layoutX="950.0" layoutY="158.0" text="Attendee Count" />
+            <Label fx:id="errorLabel" layoutX="500.0" layoutY="335.0" text="Error Label" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="successLabel" layoutX="489.0" layoutY="335.0" text="Success Label" textFill="#00d300">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="202.0" prefViewportHeight="200.0" prefViewportWidth="1183.0" prefWidth="268.0" style="-fx-background-color: #9bc2f2;">
+         <content>
+            <TableView fx:id="replyTable" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="113.0" text="Student ID" />
+                <TableColumn fx:id="col_reply" prefWidth="135.0" text="Reply" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </bottom>
+</BorderPane>
